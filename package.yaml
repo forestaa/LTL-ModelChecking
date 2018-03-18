@@ -24,6 +24,10 @@ dependencies:
 
 library:
   source-dirs: src
+  dependencies:
+  - set-monad
+  - mtl
+  - parsec
 
 executables:
   LTL-ModelChecking-exe:
@@ -35,6 +39,7 @@ executables:
     - -with-rtsopts=-N
     dependencies:
     - LTL-ModelChecking
+    - process
 
 tests:
   LTL-ModelChecking-test:

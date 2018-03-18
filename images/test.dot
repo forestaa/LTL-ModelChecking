@@ -1,0 +1,17 @@
+digraph graph_name {
+  graph [
+    charset = "UTF-8";
+    layout = circo
+  ];
+
+  // node define
+  "start" [shape = plaintext];
+  "({G(A>0)},empty)" [shape = circle];
+  "(empty,{G(A>0)})" [shape = doublecircle];
+
+  // edge define
+  "start" -> "({G(A>0)},empty)";
+  "(empty,{G(A>0)})" -> "(empty,{G(A>0)})" [label = "{{A>0}}"];
+  "({G(A>0)},empty)" -> "(empty,{G(A>0)})" [label = "{{A>0}}"];
+
+}

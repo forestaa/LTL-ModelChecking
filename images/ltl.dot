@@ -1,0 +1,34 @@
+digraph graph_name {
+  graph [
+    charset = "UTF-8";
+    layout = circo
+  ];
+
+  // node define
+  "start" [shape = plaintext];
+  "({G((¬Start ∨ F(Heat)))},∅)" [shape = circle];
+  "({F(Heat)},{G((¬Start ∨ F(Heat)))})" [shape = circle];
+  "({F(Heat)},{G((¬Start ∨ F(Heat))),F(Heat)})" [shape = circle];
+  "(∅,{G((¬Start ∨ F(Heat)))})" [shape = doublecircle];
+  "(∅,{G((¬Start ∨ F(Heat))),F(Heat)})" [shape = doublecircle];
+
+  // edge define
+  "start" -> "({G((¬Start ∨ F(Heat)))},∅)";
+  "(∅,{G((¬Start ∨ F(Heat)))})" -> "(∅,{G((¬Start ∨ F(Heat)))})" [label = "{∅,{Close},{Close,Error},{Close,Error,Heat},{Close,Error,Heat,Start},{Close,Heat},{Close,Heat,Start},{Error},{Error,Heat},{Error,Heat,Start},{Heat},{Heat,Start}}"];
+  "(∅,{G((¬Start ∨ F(Heat)))})" -> "({F(Heat)},{G((¬Start ∨ F(Heat)))})" [label = "{∅,{Close},{Close,Error},{Close,Error,Heat},{Close,Error,Heat,Start},{Close,Error,Start},{Close,Heat},{Close,Heat,Start},{Close,Start},{Error},{Error,Heat},{Error,Heat,Start},{Error,Start},{Heat},{Heat,Start},{Start}}"];
+  "(∅,{G((¬Start ∨ F(Heat))),F(Heat)})" -> "(∅,{G((¬Start ∨ F(Heat)))})" [label = "{{Close,Error,Heat},{Close,Error,Heat,Start},{Close,Heat},{Close,Heat,Start},{Error,Heat},{Error,Heat,Start},{Heat},{Heat,Start}}"];
+  "(∅,{G((¬Start ∨ F(Heat))),F(Heat)})" -> "({F(Heat)},{G((¬Start ∨ F(Heat)))})" [label = "{∅,{Close},{Close,Error},{Close,Error,Heat},{Close,Error,Heat,Start},{Close,Error,Start},{Close,Heat},{Close,Heat,Start},{Close,Start},{Error},{Error,Heat},{Error,Heat,Start},{Error,Start},{Heat},{Heat,Start},{Start}}"];
+  "({G((¬Start ∨ F(Heat)))},∅)" -> "(∅,{G((¬Start ∨ F(Heat)))})" [label = "{∅,{Close},{Close,Error},{Close,Error,Heat},{Close,Error,Heat,Start},{Close,Heat},{Close,Heat,Start},{Error},{Error,Heat},{Error,Heat,Start},{Heat},{Heat,Start}}"];
+  "({G((¬Start ∨ F(Heat)))},∅)" -> "(∅,{G((¬Start ∨ F(Heat))),F(Heat)})" [label = "{∅,{Close},{Close,Error},{Close,Error,Heat},{Close,Error,Heat,Start},{Close,Heat},{Close,Heat,Start},{Error},{Error,Heat},{Error,Heat,Start},{Heat},{Heat,Start}}"];
+  "({G((¬Start ∨ F(Heat)))},∅)" -> "({F(Heat)},{G((¬Start ∨ F(Heat)))})" [label = "{∅,{Close},{Close,Error},{Close,Error,Heat},{Close,Error,Heat,Start},{Close,Error,Start},{Close,Heat},{Close,Heat,Start},{Close,Start},{Error},{Error,Heat},{Error,Heat,Start},{Error,Start},{Heat},{Heat,Start},{Start}}"];
+  "({G((¬Start ∨ F(Heat)))},∅)" -> "({F(Heat)},{G((¬Start ∨ F(Heat))),F(Heat)})" [label = "{∅,{Close},{Close,Error},{Close,Error,Heat},{Close,Error,Heat,Start},{Close,Error,Start},{Close,Heat},{Close,Heat,Start},{Close,Start},{Error},{Error,Heat},{Error,Heat,Start},{Error,Start},{Heat},{Heat,Start},{Start}}"];
+  "({F(Heat)},{G((¬Start ∨ F(Heat)))})" -> "(∅,{G((¬Start ∨ F(Heat)))})" [label = "{{Close,Error,Heat},{Close,Error,Heat,Start},{Close,Heat},{Close,Heat,Start},{Error,Heat},{Error,Heat,Start},{Heat},{Heat,Start}}"];
+  "({F(Heat)},{G((¬Start ∨ F(Heat)))})" -> "(∅,{G((¬Start ∨ F(Heat))),F(Heat)})" [label = "{{Close,Error,Heat},{Close,Error,Heat,Start},{Close,Heat},{Close,Heat,Start},{Error,Heat},{Error,Heat,Start},{Heat},{Heat,Start}}"];
+  "({F(Heat)},{G((¬Start ∨ F(Heat)))})" -> "({F(Heat)},{G((¬Start ∨ F(Heat)))})" [label = "{∅,{Close},{Close,Error},{Close,Error,Heat},{Close,Error,Heat,Start},{Close,Heat},{Close,Heat,Start},{Error},{Error,Heat},{Error,Heat,Start},{Heat},{Heat,Start}}"];
+  "({F(Heat)},{G((¬Start ∨ F(Heat)))})" -> "({F(Heat)},{G((¬Start ∨ F(Heat))),F(Heat)})" [label = "{∅,{Close},{Close,Error},{Close,Error,Heat},{Close,Error,Heat,Start},{Close,Error,Start},{Close,Heat},{Close,Heat,Start},{Close,Start},{Error},{Error,Heat},{Error,Heat,Start},{Error,Start},{Heat},{Heat,Start},{Start}}"];
+  "({F(Heat)},{G((¬Start ∨ F(Heat))),F(Heat)})" -> "(∅,{G((¬Start ∨ F(Heat)))})" [label = "{{Close,Error,Heat},{Close,Error,Heat,Start},{Close,Heat},{Close,Heat,Start},{Error,Heat},{Error,Heat,Start},{Heat},{Heat,Start}}"];
+  "({F(Heat)},{G((¬Start ∨ F(Heat))),F(Heat)})" -> "(∅,{G((¬Start ∨ F(Heat))),F(Heat)})" [label = "{{Close,Error,Heat},{Close,Error,Heat,Start},{Close,Heat},{Close,Heat,Start},{Error,Heat},{Error,Heat,Start},{Heat},{Heat,Start}}"];
+  "({F(Heat)},{G((¬Start ∨ F(Heat))),F(Heat)})" -> "({F(Heat)},{G((¬Start ∨ F(Heat)))})" [label = "{{Close,Error,Heat},{Close,Error,Heat,Start},{Close,Heat},{Close,Heat,Start},{Error,Heat},{Error,Heat,Start},{Heat},{Heat,Start}}"];
+  "({F(Heat)},{G((¬Start ∨ F(Heat))),F(Heat)})" -> "({F(Heat)},{G((¬Start ∨ F(Heat))),F(Heat)})" [label = "{∅,{Close},{Close,Error},{Close,Error,Heat},{Close,Error,Heat,Start},{Close,Error,Start},{Close,Heat},{Close,Heat,Start},{Close,Start},{Error},{Error,Heat},{Error,Heat,Start},{Error,Start},{Heat},{Heat,Start},{Start}}"];
+
+}
